@@ -1,0 +1,37 @@
+//Recibir un entero N y calcular dos valores: la suma de todos los n�meros pares y la suma de 
+//todos los impares hasta N.
+
+#include <iostream>
+using namespace std;
+
+long double calculo_de_Numeros_impar(int N){
+    long double suma(0);
+    for (int i(1);i<=N;){
+        suma = suma + i;
+        i = i+2;
+    }
+    return suma;
+
+}
+long double calculo_de_Numeros_par(int N){
+    long double suma(0);
+    for (int i(0);i<=N;){
+        suma = suma + i;
+        i = i+2;
+    }
+    return suma;
+
+}
+
+
+int main()
+{
+    int N;
+    cout << "Calcula la suma de los numeros pares y la suma de los numeros impares hasta el numero ingresado \n" <<
+            "ingrese el numero a ser calculado \n";
+    cin >> N;
+       long double suma_impar = calculo_de_Numeros_impar(N);
+    long double suma_par = calculo_de_Numeros_par(N);
+        cout << "la suma de los numeros pares desde 0 as hasta " << N << " es " <<  suma_par << "\n";
+        cout << "la suma de los numeros impares desde 0 as hasta " << N << " es " <<  suma_impar << "\n";
+}
