@@ -1,0 +1,32 @@
+//Calculo de potencias
+
+#include <iostream>
+
+using namespace std;
+
+long double potenciar(int base, int exp)
+{
+
+ if(exp >= 1)
+      return base*potenciar(base, exp-1);
+  return 1;
+
+}
+
+
+
+int main(){
+
+int a(2),b(3);
+cout << "Calcula la n potencia de un numero dado \n \n Ingrese la base \n";
+cin >> a;
+cout << "Ingrese la potencia a la que desea elevar la base \n";
+cin >> b;
+cout << "\n \n \t";
+if (b >=0)
+    cout << a << "^" << b << " = " << potenciar(a,b) <<"\n"; //Potencia positiva + 0
+else
+    cout << a << "^" << b << " = " << 1/potenciar(a,b*-1) <<"\n"; //Potencias negativas
+cout << "\n\n\n";
+
+}
