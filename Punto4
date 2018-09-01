@@ -1,0 +1,48 @@
+//Construccion de Piramide
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void Espacios(int i, int Nf, string &Cadena){
+    for (int a(i*2);a<=Nf*2;a++){ // Espacios
+         Cadena = Cadena + " ";
+    }
+}
+
+void Caracteres(int i, char Cr, string &Cadena){
+    for (int b(i);b>0;b--){
+         Cadena = Cadena + " " + Cr; // Caracteres
+    }
+}
+
+void Construir_Piramide(char Cr, int Nf)
+{
+    string arreglo_fila;
+
+    for(int i(0);i<=Nf;i++){ //Filas
+
+       arreglo_fila="";
+
+       Espacios(i, Nf, arreglo_fila);
+
+       Caracteres(i, Cr, arreglo_fila);
+
+       cout << arreglo_fila << "\n";
+     }
+}
+
+
+int main(){
+    
+   char Caracter;
+   int Num_filas;
+
+   cout << "Ingrese el caracter que desea usar \n";
+   cin >> Caracter;
+   cout << "Ingrese el numero de filas que desa graficar \n";
+   cin >> Num_filas;
+
+   Construir_Piramide(Caracter, Num_filas);
+    }
