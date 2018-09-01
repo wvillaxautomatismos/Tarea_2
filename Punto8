@@ -1,0 +1,48 @@
+//Trayectoria de proyectil
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+const double g = 9.8;
+const double Pi = 3.1416;
+
+long double Tiempo_de_Vuelo_t(double vo, double a)
+{
+   return (2*vo*(sin(a)))/g;
+}
+
+long double Altura_maxima_h(double vo, double a)
+{
+    return ((vo*vo)*(0.5-(0.5*(cos(2*a)))))/(2*g);
+   }
+
+long double Alcance_horizontal_R(double vo, double a)
+{
+
+    return ((vo*vo)*(sin(2*a)))/(2*g);
+}
+
+void imprimir(double Vo, double Radianes)
+{
+    cout << "\n\t";
+    cout << "Tiempo de vuelo" << "\t\tT = " << Tiempo_de_Vuelo_t(Vo, Radianes) << "\ts\n\t";
+    cout << "Altura maxima alcanzada" << "\th = " << Altura_maxima_h(Vo, Radianes) << "\tm\n\t";
+    cout << "Alcance horizontal" << "\tR = " << Alcance_horizontal_R(Vo, Radianes) << "\tm\n";
+    cout << "\n";
+    cout << "\n";
+}
+
+int main(){
+ double Vo,Angulo,ANg_Radianes;
+
+    cout<< "Calcula el movimiento parabolico de un proyectil, \n ingrese la velosidad inicial en m/s \n";
+    cin >> Vo;
+    cout << "ingrese el angulo en grados en que fue disparado el proyectil \n";
+    cin >> Angulo;
+
+    ANg_Radianes = (Angulo/180)*Pi;
+    imprimir(Vo,ANg_Radianes);
+
+    }
