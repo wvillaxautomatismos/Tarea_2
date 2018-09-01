@@ -1,0 +1,29 @@
+//CONVIERTE DE MINUSCULA A MAYUSCULA
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string Covierte_min_a_MAY(string frase)
+{
+    string cadena;
+    int ascii;
+    char Mayuscula;
+    for(char Cr:frase){
+     ascii = Cr;    // convierte caracter a ASCII (ENTERO)
+     Mayuscula = char(ascii - 32); //RESTA 32 Y CONVIERTE DE NUEVO A CARACTER
+     cadena = cadena + Mayuscula;
+}
+   return cadena;
+}
+
+int main(){
+    string frase;
+
+    cout<< "Por favor ingrese una frase en letra minuscula\n";
+    getline (std::cin, frase);
+
+   cout << Covierte_min_a_MAY(frase) << "\n";
+
+    }
