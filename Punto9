@@ -1,0 +1,51 @@
+//Intercambio de valor sobrecargando funciones
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void exchange(int &Dato1, int &Dato2)
+{
+   int temporal;
+   temporal = Dato1;
+   Dato1 = Dato2;
+   Dato2 = temporal;
+}
+
+void exchange(double &Dato1, double &Dato2)
+{
+   double temporal;
+   temporal = Dato1;
+   Dato1 = Dato2;
+   Dato2 = temporal;
+}
+
+void exchange(string &Dato1, string &Dato2)
+{
+   string temporal;
+   temporal = Dato1;
+   Dato1 = Dato2;
+   Dato2 = temporal;
+}
+
+
+int main(){
+
+    int a(345), b(123);
+    cout << a << "\t" << b << "\n";
+    exchange(a,b);
+    cout << a << "\t" << b << "\n";
+    
+    double c(3542.34), d(24153.34);
+    cout << c << "\t" << d << "\n";
+    exchange(c,d);
+    cout << c << "\t" << c << "\n";
+    
+    string e, f;
+    e = "Este es el valor inicial de 'e'";
+    f = "Este es el valor inicial de 'f'";
+    cout << e << "\t" << f << "\n";
+    exchange(e,f);
+    cout << e << "\t" << f << "\n";
+    }
