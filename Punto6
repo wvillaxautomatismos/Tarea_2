@@ -1,0 +1,32 @@
+//Calcula el mayor de 6 numeros usando una funcion con dos argumentos de entrada
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+int Calcular_Mayor(int a,int b)
+{
+   if ( a >= b)
+       return a;
+   else
+       return b;
+
+    }
+
+int main(){
+
+    int a,b,c,d,e,f, mayor;
+    cout<< "Por favor ingrese 6 numeros enteros separador por un espacio\n";
+    cin >> a >> b >> c >> d >> e >> f;
+
+    mayor = Calcular_Mayor(a, b);
+    mayor = Calcular_Mayor(mayor, c);
+    mayor = Calcular_Mayor(mayor, d);
+    mayor = Calcular_Mayor(mayor, e);
+    mayor = Calcular_Mayor(mayor, f);
+    
+   cout << "El numero mayor ingresado es :" << mayor << "\n";
+
+    }
