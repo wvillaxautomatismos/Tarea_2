@@ -1,0 +1,48 @@
+//cuenta vocales y consonantes en una frace
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string Elimina_Espacios_y_caracteres(string frase)
+{
+    string cadena;
+    for(char Cr:frase){
+
+        if (Cr != ' ' && Cr != ',' && Cr != '.' && Cr != ':' && Cr != ';' && Cr != '#'
+                && Cr != '$' && Cr != '%' && Cr != '&' && Cr != '/' && Cr != '(' && Cr != ')'
+                && Cr != '=' && Cr != '?' && Cr != '+' && Cr != '!' && Cr != '0' && Cr != '1'
+                && Cr != '2' && Cr != '3' && Cr != '4' && Cr != '5' && Cr != '6' && Cr != '7'
+                && Cr != '8' && Cr != '9' && Cr != '<' && Cr != '>')
+               cadena = cadena + Cr;
+           }
+    return cadena;
+}
+
+void Contar_letras(string Frase, int &vocal, int &consonate)
+{
+    for(char Cr:Frase){
+        if (Cr == 'a' or Cr == 'e' or Cr == 'i' or Cr == 'o' or Cr == 'u' or
+            Cr == 'A' or Cr == 'E' or Cr == 'I' or Cr == 'O' or Cr == 'U')
+            vocal += 1;
+        else
+            consonate += 1;
+    }
+
+}
+
+int main(){
+    string frase, Frase_Limpia;
+    int vocales(0), Consonantes(0);
+    cout<< "Por favor ingrese una frase\n";
+    getline (std::cin, frase);
+
+    Frase_Limpia = Elimina_Espacios_y_caracteres(frase);
+
+    Contar_letras(Frase_Limpia, vocales, Consonantes);
+
+   cout << "La frase ingresada esta compuesta por: \n";
+   cout << vocales <<" Vocales y \n";
+   cout << Consonantes << "Consosnates: \n";
+    }
