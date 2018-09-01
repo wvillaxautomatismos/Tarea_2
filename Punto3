@@ -1,0 +1,30 @@
+//Escribir una aplicaci�n para el famoso problema FizzBuzz. La aplicaci�n debe imprimir los n�meros del 1 al 100.
+//Pero, para n�meros m�ltiplos de 3 debe imprimir �Fizz� (en vez del n�mero). Para n�meros m�ltiplos de 5 debe 
+//reemplazar por �Buzz�. Para n�meros m�ltiplos simult�neamente de 3 y 5 debe imprimir �FizzBuzz�.
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void imprimir_FizzBuzz(string cadena){
+    cout << cadena <<"\n";
+}
+void imprimir_numero(int Num){
+    cout << Num <<"\n";
+}
+
+int main()
+{
+    for(int i(1);i<=100;++i){
+        if ((i%3==0) and (i%5==0))
+            imprimir_FizzBuzz("FizzBuzz");
+        else if (i%3==0)
+                imprimir_FizzBuzz("Fizz");
+        else if (i%5==0)
+                imprimir_FizzBuzz("Buzz");
+        else
+            imprimir_numero(i);
+    }
+
+}
