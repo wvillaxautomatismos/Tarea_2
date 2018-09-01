@@ -1,0 +1,47 @@
+//Recibir un caracter representando las posibles calificaciones (�A�, �B�, �C�, �D� o �F�).
+//De acuerdo con el caracter, imprimir de regreso en la consola un mensaje apropiado; por ejemplo,
+//si la nota es �A� imprimir �Excelente, todo ha sido perfecto�.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string Evaluar_Nota(char N){
+       switch(N){
+    case 'A':
+        return  "Excelente, todo ha sido perfecto";
+    case 'B':
+        return  "Sobresaliente";
+    case 'C':
+        return  "Bueno";
+    case 'D':
+        return  "Regular";
+    case 'F':
+        return  "Malo";
+       case 'a':
+           return  "Excelente, todo ha sido perfecto";
+       case 'b':
+           return  "Sobresaliente";
+       case 'c':
+           return  "Bueno";
+       case 'd':
+           return  "Regular";
+       case 'f':
+           return  "Malo";
+    }
+
+}
+
+int main()
+{
+    char nota;
+    cout << "ingrese la calificacion (A, B, C, D o F) \n";
+    cin >> nota;
+
+    if (nota == 'A' or nota == 'B' or nota == 'C' or nota == 'D' or nota == 'F' or
+        nota == 'a' or nota == 'b' or nota == 'c' or nota == 'd' or nota == 'f')
+        cout << Evaluar_Nota(nota) << "\n";
+    else
+        cout << "El Caracter ingresado es incorrecto \n";
+
+}
